@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>茂名-历史记忆</title>
+<link rel="stylesheet" href="./wrapper/wrapper.css"/>
+<link rel="stylesheet" href="./wrapper/main_wrapper.css"/>
+<link rel="icon" href="./lib/Z_logo ver1.png" type="image/x-icon"/>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="globalnav">
+		<globalnav></globalnav>
+	</div>
+	<div id="content">
+		<headline></headline>
+		<intro v-for="intro in intros" v-bind:key="intro.id" v-bind:intro="intro"></intro>
+	</div>
+	<div id="globalft">
+		<globalft></globalft>
+	</div>
+	<script src="./js/builder.js"></script>
+	<script src="./js/components.js"></script>
+	<script src="./js/history.js"></script>
+</body>
+</html>

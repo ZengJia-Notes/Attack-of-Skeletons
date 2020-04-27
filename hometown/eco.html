@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>茂名-经济产业</title>
+<link rel="stylesheet" href="./wrapper/wrapper.css"/>
+<link rel="stylesheet" href="./wrapper/main_wrapper.css"/>
+<link rel="icon" href="./lib/Z_logo ver1.png" type="image/x-icon"/>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>	
+</head>
+
+<body>
+	<div id="globalnav">
+		<globalnav></globalnav>
+	</div>
+	<div id="content">
+		<headline></headline>
+		<div class="chart">
+			<div class="chart-border">
+				<div class="chart-unit">
+					<div class="chart-unit-text">第一产业</div>
+						<transition appear appear-class="table-appear" appear-active-class="table-appear-active">
+							<div class="chart-unit-table chart-unit-table-indus1"></div>
+						</transition>
+				</div>
+				<div class="chart-unit">
+					<div class="chart-unit-text">第二产业</div>
+						<transition appear appear-class="table-appear" appear-active-class="table-appear-active">
+							<div class="chart-unit-table chart-unit-table-indus2"></div>
+						</transition>
+				</div>
+				<div class="chart-unit">
+					<div class="chart-unit-text">第三产业</div>
+						<transition appear appear-class="table-appear" appear-active-class="table-appear-active">
+							<div class="chart-unit-table chart-unit-table-indus3"></div>
+						</transition>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div id="globalft">
+		<globalft></globalft>
+	</div>
+	<script src="./js/builder.js"></script>
+	<script src="./js/components.js"></script>
+	<script src="./js/eco.js"></script>
+</body>
+</html>

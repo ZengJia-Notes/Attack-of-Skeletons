@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>茂名-地理位置</title>
+<link rel="stylesheet" href="./wrapper/wrapper.css"/>
+<link rel="stylesheet" href="./wrapper/main_wrapper.css"/>
+<link rel="icon" href="./lib/Z_logo ver1.png" type="image/x-icon"/>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="https://webapi.amap.com/maps?v=1.4.14&key=94ced33eefeb0b9d1eef02ed71e65172&plugin=Map3D,AMap.DistrictLayer,AMap.Scale,AMap.ToolBar"></script>
+</head>
+
+<body>
+	<div id="globalnav">
+		<globalnav></globalnav>
+	</div>
+	<div id="content">
+		<headline></headline>
+		<div class="map">
+			<div class="map-border" @mouseenter="getHint" @mouseleave="hideHint">
+				<div v-bind:class="[{'map-hint-active': isActive}, 'map-hint']">按CTRL键 + 滑动滚轮&nbsp;&nbsp;以启用地图的放大缩小</div>
+				<div id="container"></div>
+			</div>	
+		</div>
+	</div>
+	<div id="globalft">
+		<globalft></globalft>
+	</div>
+	<script src="./js/builder.js"></script>
+	<script src="./js/components.js"></script>
+	<script src="./js/geo.js"></script>
+</body>
+</html>

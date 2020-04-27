@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BBS</title>
+<link rel="stylesheet" href="./wrapper/wrapper.css"/>
+<link rel="stylesheet" href="./wrapper/main_wrapper.css"/>
+<link rel="icon" href="./lib/Z_logo ver1.png" type="image/x-icon"/>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+</head>
+
+<body>
+	<div id="globalnav">
+		<globalnav></globalnav>
+	</div>
+	<div id="content">
+		<headline></headline>
+		<div class="cm">
+			<div class="cm-border">
+				<div class="cm-inborder">
+				<transition-group appear appear-class="comment-appear" appear-active-class="comment-appear-active" name="comment-list">
+					<comment v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></comment>
+				</transition-group>			
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="globalft">
+		<globalft></globalft>
+	</div>
+	<script src="./js/builder.js"></script>
+	<script src="./js/components.js"></script>
+	<script src="./js/bbs.js"></script>
+</body>
+</html>
