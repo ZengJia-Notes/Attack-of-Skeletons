@@ -19,7 +19,7 @@ Vue.component('headline', {
 				if (posts.length != 0) {
 					id = posts[0].id + 1;
 				}
-				let post = {id: id, text: text, msg: returnCitySN["cip"] + ' ' + returnCitySN["cname"] + ' ' + new Date().toLocaleString()};
+				let post = {id: id, text: text, msg: new Date().toLocaleString()};
 				posts.splice(0, 0, post);
 				input_text.value = "";
 				let inborder = document.getElementsByClassName("cm-inborder")[0];
