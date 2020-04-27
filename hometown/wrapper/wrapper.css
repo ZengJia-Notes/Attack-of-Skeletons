@@ -1,0 +1,248 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	margin: 0;
+}
+
+.gn {
+	position: absolute;
+	width: 100%;
+	height: 70px;
+	background-color: #EEEEEE;
+	background: -moz-linear-gradient(top, #EEEEEE, #FFFFFF);
+	z-index: 999;
+	
+	text-align: center;
+	
+	transition: all 0.3s ease-in;
+}
+
+.gn-fixed {
+	position: fixed;
+}
+
+.gn-opacity {
+	opacity: 0.65;
+}
+
+.gn-list {
+	width: 1000px;
+	margin: auto;
+	display: flex;
+	
+	line-height: 70px;
+	list-style-type: none;
+}
+
+.gn-item {
+	margin-right: 75px;
+	display: inline-block;
+	
+	font-size: 17px;
+	font-family: 'SimHei', sans-serif;
+	
+	transition: all 0.4s ease-in;
+}
+
+.gn-item:hover {
+	transform: scale(1.05);
+}
+
+.gn-link {
+	text-decoration: none;
+	color: #3D80CC;
+	outline: none;
+}
+
+.gn-link-active {
+	color: #AAAAAA;
+}
+
+.gn-link-text {
+	visibility: hidden;
+}
+
+.gn-index {
+	height: 110px;
+	margin-right: 20px;
+	background-image: url("../lib/logo.png");
+	background-repeat: no-repeat;
+	background-size: auto 125px;
+	background-position: center center;
+	
+	line-height: 110px;
+}
+
+.gn-geo {
+	width: 100px;
+	height: 70px;
+	margin-left: -50px;
+	margin-right: 10px;
+	background-image: url("../lib/loc.png");
+	background-repeat: no-repeat;
+	background-size: auto 50px;
+	background-position: center center;
+}
+
+.gn-bbs {
+	width: 100px;
+	height: 70px;
+	margin-right: 0;
+	background-image: url("../lib/bbs.png");
+	background-repeat: no-repeat;
+	background-size: auto 70px;
+	background-position: center center;
+}
+
+.bc {
+	position: absolute;
+	top: 170px;
+	width: 100%;
+}
+
+.bc-list {
+	width: 840px;
+	height: 70px;
+	margin: auto;
+	padding: 0;
+	display: flex;
+
+	list-style: none;
+	line-height: 70px;
+}
+
+.bc-item {
+	display: inline-block;
+	
+	color: #3D80CC;
+}
+
+.bc-index {
+	width: 50px;
+	height: 70px;
+	background-image: url("../lib/logo.png");
+	background-repeat: no-repeat;
+	background-size: auto 70px;
+	background-position: center center;
+}
+
+.bc-link {
+	font-family: 'SimSun', sans-serif;
+	font-size: 0.75em;
+	text-decoration: none;
+	color: #3D80CC;
+	outline: none;
+}
+
+.bc-link-active:hover {
+	text-decoration: underline;
+}
+
+.bc-link-text {
+	visibility: hidden;
+}
+
+.bc-en {
+	font-family: Century, Times New Roman, sans-serif;
+}
+
+.gf {
+	position: relative;
+	top: 170px;
+	width: 100%;
+	background-color: #EEEEEE;
+	background: -moz-linear-gradient(top, #EEEEEE, #FFFFFF, #EEEEEE);
+	
+	text-align: center;
+}
+
+.gf-directory {
+	width: 820px;
+	margin: auto;
+	padding: 0;
+	display: flex;
+	
+	list-style-type: none;
+	color: #000000;
+	font-family: 'SimSun', sans-serif;
+	font-size: 0.75em;
+}
+
+.gf-directory-padding-top {
+	padding-top: 25px;
+}
+
+.gf-dir-list {
+	width: 70px;
+	margin-right: 50px;
+	padding: 0;
+	display: inline-block;
+	
+	list-style-type: none;
+}
+
+.gf-dir-item {
+	height: 28px;
+	
+	text-align: left;
+}
+
+.gf-dir-text {
+	font-weight: bold;
+}
+
+.gf-link {
+	text-decoration: none;
+	color: #000000;
+	outline: none;
+}
+
+.gf-hr {
+	width: 820px;
+	margin: auto;
+	
+	color: #C0C0C0;
+	opacity: 0.5;
+}
+
+.gf-addr {
+	width: 820px;
+	height: 40px;
+	margin: auto;
+	
+	font-style: normal;
+	font-size: 0.75em;
+	line-height: 30px;
+}
+
+.gf-mail {
+	font-family: 'SimSun', sans-serif;
+	float: left;
+	color: #999999;
+}
+
+.gf-mail-link {
+	color: #3D80CC;
+	opacity: 1;
+	text-decoration: none;
+}
+
+.gf-author {
+	float: right;
+	color: #999999;
+}
+
+.gf-author-text {
+	color: #3D80CC;
+	opacity: 1;
+	font-family: Times New Roman, sans-serif;
+}
+
+.gf-link:hover, .gf-mail-link:hover {
+	text-decoration-line: underline;
+}
+
+.gf-en {
+	font-family: Century, Times New Roman, sans-serif;
+}
