@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Prototype Display</title>
+    <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="./css/wrapper.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div class="app-info">
+            会计系统登录展示
+            <div style="font-size:0.25em">
+                <div style="line-height: 1.5em">
+                    Tip: <br>
+                    静态网页，无后台通信
+                </div>
+            </div>
+        </div>
+        <div class="app-login">
+            <login></login>
+        </div>
+    </div>
+    <script src="./js/loginScript.js"></script>
+    <script>
+		var app = new Vue({
+			el: '#app',
+			components: {
+				login: loginManger
+			}
+		})
+	</script>
+</body>
+</html>
