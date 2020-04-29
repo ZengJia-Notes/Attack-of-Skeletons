@@ -1,0 +1,600 @@
+
+body {
+	margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.app-info {
+	width: 700px;
+	height: 300px;
+
+	margin: 200px 200px;
+	text-align: left;
+	line-height: 120px;
+
+	font-family: 'SimHei', sans-serif, 'FangSong', Century, 'SimSun';
+	font-size: 5em;
+	color: #A0A0A0;
+}
+
+.app-login {
+	position: fixed;
+	top: 50px;
+	right: 200px;
+}
+
+.login-border {
+	width: 230px;
+	height: 435px;
+
+	margin: 10px auto;
+	padding: 20px;
+	text-align: center;
+
+	border: 0.2em solid #5F5F5F;
+	border-radius: 0.7em;
+	background-color: #FAFAFA;
+}
+
+.login-head-border {
+	width: 200px;
+	height: 70px;
+
+	margin: auto;
+	line-height: 30px;
+	text-align: center;
+
+	border-bottom: 0.1em groove #3D80CC;
+
+	font-family: 'FangSong', 'SimHei';
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #3D80CC;
+}
+
+.login-option-border {
+	width: 200px;
+	height: 40px;
+
+	margin: 5px auto;
+	text-align: center;
+	line-height: 40px;
+}
+
+.login-select {
+	width: 200px;
+	height: 40px;
+
+	text-align: center;
+	line-height: 40px;
+
+	border: 1px dashed #8A8A8A;
+
+	font-family: Times New Roman, sans-serif;
+	font-size: 1.35em;
+	color: #000000;
+}
+
+.login-no {
+	width: 172px;
+	height: 20px;
+
+	text-align: right;
+	line-height: 20px;
+
+	border: 1px dashed #8A8A8A;
+
+	font-family: Times New Roman, sans-serif;
+	font-size: 0.75em;
+	font-style: italic;
+}
+
+.login-pwd {
+	width: 172px;
+	height: 20px;
+
+	text-align: right;
+	line-height: 20px;
+
+	border: 1px dashed #8A8A8A;
+
+	font-family: Times New Roman, sans-serif;
+	font-size: 0.75em;
+	font-style: italic;
+}
+
+.login-tip-border {
+
+}
+
+.login-nav-border {
+	width: 200px;
+	height: 40px;
+
+	margin: 5px auto;
+	text-align: left;
+	line-height: 40px;
+
+	font-family: sans-serif;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: bold;
+	color: #3D80CC;
+
+	border-bottom: 0.1em groove #3D80CC;
+}
+
+.login-tip-border {
+
+}
+
+.login-btn-border {
+	width: 200px;
+	height: 50px;
+
+	margin: 0 auto;
+	padding: 5px auto;
+	text-align: center;
+	line-height: 50px;
+}
+
+.login-btn {
+	width: 100px;
+	height: 30px;
+
+	border-style: none;
+	background-color: #3D80CC;
+
+	font-family: Century, Times New Roman, sans-serif;
+	font-size: 0.85em;
+	color: #FAFAFA;
+}
+
+.login-dev-border {
+	margin-bottom: 0;
+
+	font-family: sans-serif;
+	font-style: italic;
+	font-size: 0.7em;
+	color: #A0A0A0;
+}
+
+.account-border {
+    display: flex;
+
+    width: 700px;
+    height: 50px;
+	margin: auto;
+	margin-bottom: -2px;
+
+	border: 3px solid #3D80CC;
+
+    line-height: 50px;
+    text-align: center;
+}
+
+.account-no {
+	width: 100px;
+
+	font-family: Century, sans-serif;
+	font-size: 1.2em;
+}
+
+.account-name {
+	width: 500px;
+
+	background-color: #FAFAFA;
+	border-style: dashed;
+
+	text-align: center;
+	font-family: "FangSong", sns-serif;
+	font-size: 1.2em;
+	color: #000000;
+}
+
+.account-option {
+	width: 100px;
+
+	font-family: "SimHei", sns-serif;
+	font-size: 1.2em;
+}
+
+.account-option-btn-del {
+	width: 50px;
+	height: 30px;
+
+	background-color: #F00;
+	border-width: 0.3em;
+	border-style: outset;
+
+	font-size: 0.75em;
+	font-family: Times New Roman, sans-serif;
+	color: #FFF;
+}
+
+.option-wrapper {
+	right: 0;
+	top: 100px;
+	height: 70px;
+	position: fixed;
+
+	text-align: center;
+}
+
+.option-border {
+	width: 100px;
+	height: 500px;
+	margin: auto;
+	margin-bottom: 7px;
+
+	background-color: #FAFAFA;
+	border: 0.15em solid #00A000;
+	border-radius: 0.5em 0.5em 0 0;
+}
+
+.option-border-btn {
+	width: 100px;
+	height: 40px;
+	margin: auto;
+
+	background-color: #00A000;
+	border-radius: 0.3em;
+	border-style: unset;
+
+	font-size: 1.2em;
+	font-family: Century, sans-serif;
+	font-weight: bolder;
+	color: #FAFAFA;
+}
+
+.option-border-appear{
+	transform: translateY(5px);
+}
+
+.option-border-appear-active{
+    transition: all 0.5s;
+}
+
+.voucher-border {
+	width: 1000px;
+	height: 500px;
+
+	margin: 0 auto;
+
+	color: #FF0000;
+}
+
+.voucher-input {
+	color: #000000;
+}
+
+.voucher-head-border {
+	width: 1000px;
+	height: 110px;
+
+	text-align: center;
+}
+
+.voucher-head-title-border {
+	width: 400px;
+	height: 70px;
+
+	margin: auto;
+	text-align: end;
+	line-height: 100px;
+
+	border-bottom: 0.05em solid;
+
+	font-family: 'SimSun', 'FangSong', 'SimHei';
+	font-size: 2.5em;
+	font-weight: bold;
+	letter-spacing: 1.2em;
+}
+
+.voucher-head-subtitle-border {
+	display: flex;
+
+	width: 1000px;
+	height: 40px;
+
+	line-height: 40px;
+
+	font-family: 'FangSong', 'SimSun', 'SimHei';
+	font-size: 1.15em;
+}
+
+.voucher-head-subtitle-acct-border {
+	width: 385px;
+	height: 40px;
+
+	text-align: left;
+}
+
+.voucher-head-subtitle-date-border {
+	width: 75px;
+	height: 40px;
+
+	text-align: right;
+}
+
+.voucher-head-subtitle-id-type-border {
+	width: 280px;
+	height: 40px;
+
+	text-align: right;
+}
+
+.voucher-head-subtitle-id-no-border {
+	width: 110px;
+	height: 40px;
+
+	text-align: end;
+
+	letter-spacing: 1.8em;
+}
+
+.voucher-body-border {
+	width: 1000px;
+
+	font-family: 'FangSong', 'SimSun', 'SimHei';
+	font-size: 1.2em;
+}
+
+.voucher-body-tag-border {
+	display: flex;
+
+	width: 1000px;
+	height: 60px;
+
+	border: 0.15em solid;
+	border-bottom: 0.05em solid;
+}
+
+.voucher-body-tag-text-border {
+	width: 320px;
+	height: 60px;
+
+	text-align: end;
+	line-height: 60px;
+
+	border-right: 0.05em solid;
+
+	letter-spacing: 5em;
+}
+
+.voucher-body-tag-acct-border {
+	width: 350px;
+	height: 60px;
+}
+
+.voucher-body-tag-acct-title-border {
+	width: 349.5px;
+	height: 30px;
+
+	text-align: end;
+	line-height: 30px;
+
+	border-right: 0.05em solid;
+	border-bottom: 0.05em solid;
+
+	letter-spacing: 2.8em;
+}
+
+.voucher-body-tag-acct-subtitle-border {
+	display: flex;
+
+	width: 350px;
+	height: 30px;
+
+	text-align: end;
+	line-height: 30px;
+
+	font-size: 0.8em;
+	letter-spacing: 1.4em;
+}
+
+.voucher-body-tag-acct-subtitle-subacct-border {
+	width: 175px;
+	height: 30px;
+
+	border-right: 0.05em solid;
+}
+
+.voucher-body-tag-balance-border {
+	width: 330px;
+	height: 60px;
+}
+
+.voucher-body-tag-balance-title-border {
+	width: 330px;
+	height: 30px;
+
+	text-align: end;
+	line-height: 30px;
+
+	border-bottom: 0.05em solid;
+
+	letter-spacing: 5em;
+}
+
+.voucher-body-tag-balance-subtitle-border {
+	display: flex;
+
+	width: 330px;
+	height: 30px;
+}
+
+.voucher-body-tag-balance-subtitle-unit-border {
+	width: 30px;
+	height: 30px;
+
+	text-align: center;
+	line-height: 30px;
+
+	border-right: 0.05em solid;
+}
+
+.voucher-body-entity-border {
+	display: flex;
+
+	width: 1000px;
+	height: 40px;
+
+	border-left: 0.15em solid;
+	border-right: 0.15em solid;
+}
+
+.voucher-body-entity-text-border {
+	width: 320px;
+	height: 40px;
+
+	line-height: 40px;
+
+	border-bottom: 0.05em solid;
+	border-right: 0.05em solid;
+}
+
+.voucher-body-entity-text {
+	width: 317px;
+	height: 35px;
+
+	text-align: center;
+	line-height: 50px;
+
+	border: none;
+
+	font-family: 'FangSong', 'SimSun', 'SimHei';
+	font-size: 1em;
+}
+
+.voucher-body-entity-acct-border {
+	width: 180px;
+	height: 40px;
+
+	line-height: 40px;
+
+	border-bottom: 0.05em solid;
+	border-right: 0.05em solid;
+}
+
+.voucher-body-entity-acct {
+	width: 174.3px;
+	height: 38px;
+
+	text-align: center;
+	line-height: 38px;
+
+	border: none;
+
+	font-family: 'FangSong', 'SimSun', 'SimHei';
+	font-size: 1em;
+	letter-spacing: 0.5em;
+
+	-webkit-appearance: none;
+}
+
+.voucher-body-entity-balance-unit-border {
+	width: 29.2px;
+	height: 40px;
+
+	line-height: 40px;
+
+	border-bottom: 0.05em solid;
+	border-right: 0.05em solid;
+}
+
+.voucher-body-entity-balance-unit {
+	width: 27.2px;
+	height: 35px;
+
+	text-align: right;
+	line-height: 40px;
+
+	border: none;
+
+	font-family: 'FangSong', 'SimSun', 'SimHei';
+	font-size: 1em;
+}
+
+.voucher-body-sum-border {
+	display: flex;
+
+	width: 1000px;
+	height: 40px;
+
+	border-left: 0.15em solid;
+	border-right: 0.15em solid;
+	border-bottom: 0.15em solid;
+}
+
+.voucher-body-sum-text-border {
+	width: 670px;
+	height: 40.8px;
+
+	text-align: left;
+	line-height: 40px;
+
+	border-right: 0.05em solid;
+
+	letter-spacing: 2em;
+}
+
+.voucher-tail-border {
+	display: flex;
+
+	width: 1000px;
+	height: 40px;
+
+	line-height: 40px;
+
+	font-family: 'FangSong', 'SimSong', 'SimHei';
+	font-size: 1.2em;
+}
+
+.voucher-tail-occupy-border {
+	width: 600px;
+	height: 40px;
+
+	line-height: 40px;
+}
+
+.voucher-tail-tag-border {
+	width: 100px;
+	height: 40px;
+
+	line-height: 40px;
+}
+
+.voucher-tail-name-border {
+	width: 100px;
+	height: 40px;
+
+	line-height: 40px;
+}
+
+.right-option-border {
+	position: fixed;
+	right: 0;
+	top: 200px;
+}
+
+.right-option-btn {
+	width: 70px;
+	height: 70px;
+
+	text-align: center;
+	line-height: 50px;
+
+	border: 0.1em solid #3D80CC;
+
+	font-size: 2em;
+}
