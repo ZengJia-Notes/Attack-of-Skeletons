@@ -1,0 +1,535 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Voucher | Prototype display</title>
+    <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="./css/wrapper.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<div id="app">
+    <div class="voucher-border">
+        <div class="voucher-head-border">
+            <div class="voucher-head-title-border">
+                付款凭证
+            </div>
+            <div class="voucher-head-subtitle-border">
+                <div class="voucher-head-subtitle-acct-border">
+                    借方科目:
+                    <select style="width:100px" class="voucher-body-entity-acct" v-model="voucher.info[6].acct_name">
+                        <option v-for="acct in accts">
+                            {{acct.name}}
+                        </option>
+                    </select>
+                    <select style="width:100px" class="voucher-body-entity-acct" v-model="voucher.info[6].sub_acct_name" v-for="acct in accts" v-if="acct.name == voucher.info[6].acct_name">
+                        <option  v-for="sub_acct in acct.sub_acct">
+                            {{sub_acct}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-head-subtitle-date-border">
+                    <span class="voucher-input">{{voucher.date.getFullYear()}}</span>年
+                </div>
+                <div class="voucher-head-subtitle-date-border">
+                    <span class="voucher-input">{{voucher.date.getMonth() + 1}}</span>月
+                </div>
+                <div class="voucher-head-subtitle-date-border">
+                    <span class="voucher-input">{{voucher.date.getDate()}}</span>日
+                </div>
+                <div class="voucher-head-subtitle-id-type-border">
+                    <select v-model="voucher.type">
+                        <option>现付</option>
+                        <option>银付</option>
+                    </select>字第
+                </div>
+                <div class="voucher-head-subtitle-id-no-border">
+                    <input type="number" v-model.number="voucher.no" style="width:20px">号
+                </div>
+            </div>
+        </div>
+        <div class="voucher-body-border">
+            <div class="voucher-body-tag-border">
+                <div class="voucher-body-tag-text-border">
+                    摘要
+                </div>
+                <div class="voucher-body-tag-acct-border">
+                    <div class="voucher-body-tag-acct-title-border">
+                        贷方科目
+                    </div>
+                    <div class="voucher-body-tag-acct-subtitle-border">
+                        <div class="voucher-body-tag-acct-subtitle-subacct-border">
+                            总账科目
+                        </div>
+                        <div class="voucher-body-tag-acct-subtitle-subacct-border">
+                            明细科目
+                        </div>
+                    </div>
+                </div>
+                <div class="voucher-body-tag-balance-border">
+                    <div class="voucher-body-tag-balance-title-border">
+                        金额
+                    </div>
+                    <div class="voucher-body-tag-balance-subtitle-border">
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">亿</div>
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">千</div>
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">百</div>
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">十</div>
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">万</div>
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">千</div>
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">百</div>
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">十</div>
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">元</div>
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">角</div>
+                        <div class="voucher-body-tag-balance-subtitle-unit-border">分</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="voucher-body-entity-border">
+                <div class="voucher-body-entity-text-border">
+                    <input type="text" class="voucher-body-entity-text" v-model="voucher.info[0].text">
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[0].acct_name">
+                        <option v-for="acct in accts">
+                            {{acct.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[0].sub_acct_name" v-for="acct in accts" v-if="acct.name == voucher.info[0].acct_name">
+                        <option  v-for="sub_acct in acct.sub_acct">
+                            {{sub_acct}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][0]">
+                </div>
+                <div  class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][1]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][2]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][3]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][4]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][5]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][6]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][7]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][8]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][9]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[0][10]">
+                </div>
+            </div>
+            <div class="voucher-body-entity-border">
+                <div class="voucher-body-entity-text-border">
+                    <input type="text" class="voucher-body-entity-text" v-model="voucher.info[1].text">
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[1].acct_name">
+                        <option v-for="acct in accts">
+                            {{acct.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[1].sub_acct_name" v-for="acct in accts" v-if="acct.name == voucher.info[1].acct_name">
+                        <option  v-for="sub_acct in acct.sub_acct">
+                            {{sub_acct}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][0]">
+                </div>
+                <div  class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][1]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][2]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][3]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][4]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][5]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][6]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][7]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][8]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][9]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[1][10]">
+                </div>
+            </div>
+            <div class="voucher-body-entity-border">
+                <div class="voucher-body-entity-text-border">
+                    <input type="text" class="voucher-body-entity-text" v-model="voucher.info[2].text">
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[2].acct_name">
+                        <option v-for="acct in accts">
+                            {{acct.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[2].sub_acct_name" v-for="acct in accts" v-if="acct.name == voucher.info[2].acct_name">
+                        <option  v-for="sub_acct in acct.sub_acct">
+                            {{sub_acct}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][0]">
+                </div>
+                <div  class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][1]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][2]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][3]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][4]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][5]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][6]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][7]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][8]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][9]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[2][10]">
+                </div>
+            </div>
+            <div class="voucher-body-entity-border">
+                <div class="voucher-body-entity-text-border">
+                    <input type="text" class="voucher-body-entity-text" v-model="voucher.info[3].text">
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[3].acct_name">
+                        <option v-for="acct in accts">
+                            {{acct.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[3].sub_acct_name" v-for="acct in accts" v-if="acct.name == voucher.info[3].acct_name">
+                        <option  v-for="sub_acct in acct.sub_acct">
+                            {{sub_acct}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][0]">
+                </div>
+                <div  class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][1]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][2]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][3]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][4]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][5]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][6]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][7]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][8]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][9]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[3][10]">
+                </div>
+            </div>
+            <div class="voucher-body-entity-border">
+                <div class="voucher-body-entity-text-border">
+                    <input type="text" class="voucher-body-entity-text" v-model="voucher.info[4].text">
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[4].acct_name">
+                        <option v-for="acct in accts">
+                            {{acct.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[4].sub_acct_name" v-for="acct in accts" v-if="acct.name == voucher.info[4].acct_name">
+                        <option  v-for="sub_acct in acct.sub_acct">
+                            {{sub_acct}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][0]">
+                </div>
+                <div  class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][1]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][2]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][3]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][4]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][5]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][6]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][7]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][8]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][9]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[4][10]">
+                </div>
+            </div>
+            <div class="voucher-body-entity-border">
+                <div class="voucher-body-entity-text-border">
+                    <input type="text" class="voucher-body-entity-text" v-model="voucher.info[5].text">
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[5].acct_name">
+                        <option v-for="acct in accts">
+                            {{acct.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-acct-border">
+                    <select class="voucher-body-entity-acct" v-model="voucher.info[5].sub_acct_name" v-for="acct in accts" v-if="acct.name == voucher.info[5].acct_name">
+                        <option  v-for="sub_acct in acct.sub_acct">
+                            {{sub_acct}}
+                        </option>
+                    </select>
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][0]">
+                </div>
+                <div  class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][1]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][2]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][3]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][4]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][5]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][6]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][7]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][8]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][9]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[5][10]">
+                </div>
+            </div>
+            <div class="voucher-body-sum-border">
+                <div class="voucher-body-sum-text-border">
+                    &emsp;合计
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][0]">
+                </div>
+                <div  class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][1]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][2]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][3]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][4]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][5]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][6]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][7]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][8]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][9]">
+                </div>
+                <div class="voucher-body-entity-balance-unit-border">
+                    <input type="number" min="0" max="9" class="voucher-body-entity-balance-unit" v-model.number="balance[6][10]">
+                </div>
+            </div>
+        </div>
+        <div class="voucher-tail-border">
+            <div class="voucher-tail-occupy-border"></div>
+            <div class="voucher-tail-tag-border">
+                审核人
+            </div>
+            <div class="voucher-tail-name-border">
+                {{voucher.auditor}}
+            </div>
+            <div class="voucher-tail-tag-border">
+                制证人
+            </div>
+            <div class="voucher-tail-name-border">
+                <input type="text" v-model="voucher.accountant" style="width:100px"/>
+            </div>
+        </div>
+    </div>
+    <div class="right-option-border">
+        <button class="right-option-btn" v-on:click="save">💾</button>
+    </div>
+</div>
+<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				voucher: {
+					type: '银付',
+					no: '1',
+					info: [{
+						text: 'Type here to start', type: '', acct_name: '', sub_acct_name: ''
+					}, {
+						text: '', type: '', acct_name: '', sub_acct_name: ''
+					}, {
+						text: '', type: '', acct_name: '', sub_acct_name: ''
+					}, {
+						text: '', type: '', acct_name: '', sub_acct_name: ''
+					}, {
+						text: '', type: '', acct_name: '', sub_acct_name: ''
+					}, {
+						text: '', type: '', acct_name: '', sub_acct_name: ''
+					}, {
+						text: '', type: '', acct_name: '', sub_acct_name: ''
+					}],
+					acct: '',
+					date: new Date(),
+					accountant: '',
+					auditor: ''
+				},
+				balance: [
+						 ['', '', '', '', '', '', '', '', '', '', ''],
+                         ['', '', '', '', '', '', '', '', '', '', ''],
+						 ['', '', '', '', '', '', '', '', '', '', ''],
+						 ['', '', '', '', '', '', '', '', '', '', ''],
+						 ['', '', '', '', '', '', '', '', '', '', ''],
+                         ['', '', '', '', '', '', '', '', '', '', ''],
+                         ['', '', '', '', '', '', '', '', '', '', '']
+                         ],
+				accts: [{name: '银行存款', sub_acct: ['中国人民银行', '中国工商银行']}, {name: '原材料', sub_acct: ['A材料', 'B材料']}, {name: '应交税费', sub_acct: ['应交增值税(进)']}]
+			},
+			methods: {
+				show: function () {
+					var data = {};
+					data.type = this.voucher.type;
+					data.no = this.voucher.no;
+					var infoList = [];
+					for (var i = 0; i < 7; i += 1) {
+						var info = {};
+						info.text = this.voucher.info[i].text;
+						info.type = '贷';
+						if (i == 6) {
+							info.type = '借';
+						}
+						info.acct_name = this.voucher.info[i].acct_name;
+						info.sub_acct_name = this.voucher.info[i].sub_acct_name;
+						info.balance = 0;
+						for (var j = 0; j < 11; j++) {
+							info.balance = 10 * info.balance + this.balance[i][j];
+						}
+						info.balance = 0.01 * info.balance;
+						infoList.push(info);
+					}
+					data.info = JSON.stringify(infoList);
+					data.acct = this.voucher.info[6].acct_name;
+					data.sub_acct = this.voucher.info[6].sub_acct_name;
+					data.date = this.voucher.date;
+					data.accountant = this.voucher.accountant;
+					console.log(data);
+					return data;
+				},
+                save: function () {
+                    alert('Just a static page!');
+                }
+			}
+		});
+	</script>
+</body>
+</html>
