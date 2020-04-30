@@ -1,15 +1,17 @@
-## Welcome to ZengJia-Notes
+## 欢迎来到ZengJia-Notes
 
-### Here are my personal projects!
+### 这些都是我的独立作品
 
-#### My hometown - Maoming
+#### 我的家乡-茂名
 A full project, only run on the browser.
 
 
-*Firefox*, *Chrome* support.
+*Firefox*, *Chrome* 均支持良好.
+
+图片资源角度，请等待图片加载完成以便最佳体验。
 
 
-**click [here](https://zengjia-notes.github.io/hometown/) to visit!**
+**点击 [这里](https://zengjia-notes.github.io/hometown/) 来访问!**
 
 
 HTML/CSS/JS/Vue
@@ -19,19 +21,19 @@ HTML/CSS/JS/Vue
 A prototype.
 
 
-*Firefox* better. *Chrome* good.
+*Firefox* 支持良好. *Chrome* 部分显示错误.
 
 
-The Login page:
+登录页面:
 
 
-**click [Here](https://zengjia-notes.github.io/Account/login) to visit!**
+**点击 [这里](https://zengjia-notes.github.io/Account/login) 来访问!**
 
 
-The Payment-Voucher page:
+付款凭证页面:
 
 
-**click [here](https://zengjia-notes.github.io/Account/voucher) to visit!**
+**点击 [这里](https://zengjia-notes.github.io/Account/voucher) 来访问!**
 
 
 HTML/CSS/JS/Vue
