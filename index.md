@@ -8,7 +8,7 @@ A full project, only run on the browser.
 
 *Firefox*, *Chrome* 均支持良好.
 
-图片资源角度，请等待图片加载完成以便最佳体验。
+图片资源较多，请等待图片加载完成以便最佳体验。
 
 
 **点击 [这里](https://zengjia-notes.github.io/hometown/) 来访问!**
@@ -17,7 +17,7 @@ A full project, only run on the browser.
 HTML/CSS/JS/Vue
 
 
-#### Account
+#### 会计
 A prototype.
 
 
