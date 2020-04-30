@@ -9,7 +9,7 @@ A full project, only run on the browser.
 *Firefox*, *Chrome* support.
 
 
-**click [here](https://zengjia-notes/hometown/) to visit!**
+**click [here](https://zengjia-notes.github.io/hometown/) to visit!**
 
 
 HTML/CSS/JS/Vue
@@ -25,13 +25,13 @@ A prototype.
 The Login page:
 
 
-**click [Here](https://zengjia-notes/Account/login) to visit!**
+**click [Here](https://zengjia-notes.github.io/Account/login) to visit!**
 
 
 The Payment-Voucher page:
 
 
-**click [here](https://zengjia-notes/Account/voucher) to visit!**
+**click [here](https://zengjia-notes.github.io/Account/voucher) to visit!**
 
 
 HTML/CSS/JS/Vue
