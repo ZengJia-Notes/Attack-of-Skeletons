@@ -1,0 +1,54 @@
+
+body {
+	margin: 0;
+
+	background-color: #000000;
+}
+
+#screen {
+	margin: 20px auto;
+	width: 800px;
+	height: 600px;
+}
+
+#ad {
+	display: flex;
+
+	position: fixed;
+	bottom: 0px;
+
+	width: 100%;
+	height: 200px;
+
+	background-image: linear-gradient(#000000, #777777);
+
+	text-align: center;
+	justify-content: center;
+}
+
+#ad-skeletonImg {
+	height: 300px;
+
+	margin-top: -150px;
+}
+
+#ad-text {
+	width: 800px;
+	height: 150px;
+
+	background-image: url("../lib/fireball.png");
+	background-size: 20%;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	font-size: 50px;
+	-webkit-text-stroke: 2px #333333;
+	font-family: Impact, sans-serif;
+	-webkit-text-fill-color: #FFFFFF;
+}
+
+#ad-wizardImg {
+	height: 500px;
+
+	margin-top: -300px;
+}

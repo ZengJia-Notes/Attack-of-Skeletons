@@ -1,0 +1,61 @@
+{
+	"type": "Path",
+	"x": 0,
+	"y": 0,
+	"autoClose": false,
+	"curves": [
+		{
+			"type": "MoveTo",
+			"points": [ 0, 150 ]
+		},
+		{
+			"type": "LineCurve",
+			"points": [ 0, 150, 375, 150 ]
+		},
+		{
+			"type": "EllipseCurve",
+			"x": 375,
+			"y": 75,
+			"xRadius": 75,
+			"yRadius": 75,
+			"startAngle": 0,
+			"endAngle": 90,
+			"clockwise": true,
+			"rotation": 90
+		},
+		{
+			"type": "LineCurve",
+			"points": [ 300, 75, 300, 375 ]
+		},
+		{
+			"type": "EllipseCurve",
+			"x": 375,
+			"y": 375,
+			"xRadius": 75,
+			"yRadius": 75,
+			"startAngle": 0,
+			"endAngle": 90,
+			"clockwise": true,
+			"rotation": 180
+		},
+		{
+			"type": "LineCurve",
+			"points": [ 375, 300, 75, 300 ]
+		},
+		{
+			"type": "EllipseCurve",
+			"x": 75,
+			"y": 375,
+			"xRadius": 75,
+			"yRadius": 75,
+			"startAngle": 0,
+			"endAngle": 90,
+			"clockwise": true,
+			"rotation": 270
+		},
+		{
+			"type": "LineCurve",
+			"points": [ 150, 375, 150, 0 ]
+		}
+	]
+}
